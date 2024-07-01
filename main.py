@@ -32,8 +32,8 @@ WORKOUT_ENDPOINT = "https://trackapi.nutritionix.com/v2/natural/exercise"
 
 
 # Sheety API authentication (https://sheety.co/docs/requests.html)
-TOKEN = os.getenv("TOKEN")
-SHEET_ENDPOINT = "https://api.sheety.co/36c7b6595414d1f2e43ab86dbc510f28/workoutTracking/workouts"
+SHEET_TOKEN = os.getenv("SHEET_TOKEN")
+SHEET_ENDPOINT = os.getenv("SHEET_ENDPOINT")
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ now_time = now.strftime("%X")
 
 # Headers for authentication to use the Google sheet
 sheet_headers = {
-    "Authorization": f"Bearer {TOKEN}"
+    "Authorization": f"Bearer {SHEET_TOKEN}"
 }
 
 # This for loop creates a sheet_input(basically parameters for the Google sheet) to be passed in the POST request
